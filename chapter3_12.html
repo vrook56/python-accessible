@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.12 - Multiples of Three</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<h1>Chapter 3.12: Multiples of Three</h1>
+<div class="box"><h2>What you are learning</h2><p>Use a for statement to input three integers. For each integer, use if...else to print whether it is a multiple of 3. Use input() with no prompt.</p></div>
+<div class="box hint"><h2>Example</h2><div class="example">for _ in range(2):
+    n = int(input())
+    if n % 2 == 0:
+        print(n, &#x27;is even&#x27;)
+    else:
+        print(n, &#x27;is odd&#x27;)</div></div>
+<div class="box"><label for="inputs"><strong>Test inputs</strong> (space separated)</label><input id="inputs" value="9 7 24" style="font-size:28px;width:100%;padding:12px;box-sizing:border-box"></div>
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Write your for loop below
+"># Write your for loop below
+</textarea>
+<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
+<div class="nav"><a href="chapter3_11.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_13.html">Next Lesson →</a></div>
+<script>function testLesson(out,code){ exp='9 is a multiple of 3\n7 is not a multiple of 3\n24 is a multiple of 3'; return (out.strip()==exp, 'Use % 3 and produce one line for each of the three inputs.') }</script>
+</main></body></html>

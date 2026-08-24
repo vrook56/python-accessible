@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.11 - Sentinel-Controlled Average</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<h1>Chapter 3.11: Sentinel-Controlled Average</h1>
+<div class="box"><h2>What you are learning</h2><p>Use a sentinel-controlled while loop. Input positive integers until -1 is entered. Then calculate the average and store it in average. Use input() with no prompt.</p></div>
+<div class="box hint"><h2>Example</h2><div class="example">total = 0
+counter = 0
+value = int(input())
+while value != -1:
+    total += value
+    counter += 1
+    value = int(input())
+average = total / counter</div></div>
+<div class="box"><label for="inputs"><strong>Test inputs</strong> (space separated)</label><input id="inputs" value="90 80 70 -1" style="font-size:28px;width:100%;padding:12px;box-sizing:border-box"></div>
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="total = 0
+counter = 0
+
+# Write your sentinel loop below
+
+print(average)">total = 0
+counter = 0
+
+# Write your sentinel loop below
+
+print(average)</textarea>
+<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
+<div class="nav"><a href="chapter3_10.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_12.html">Next Lesson →</a></div>
+<script>function testLesson(out,code){ try: return (abs(float(out.strip().splitlines()[-1])-80)<1e-9 and 'while' in code and '-1' in code and 'input()' in code, 'With inputs 90 80 70 -1, the average should be 80.')
+except: return (False,'Calculate average after the sentinel loop.') }</script>
+</main></body></html>

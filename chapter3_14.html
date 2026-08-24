@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.14 - Decimal Tip</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<h1>Chapter 3.14: Decimal Tip</h1>
+<div class="box"><h2>What you are learning</h2><p>Import Decimal, create bill_amount = Decimal(&#x27;69.40&#x27;) and tip_percentage = Decimal(&#x27;0.15&#x27;), calculate the tip and total_bill, then print only total_bill formatted to two decimal places.</p></div>
+<div class="box hint"><h2>Example</h2><div class="example">from decimal import Decimal
+price = Decimal(&#x27;10.00&#x27;)
+rate = Decimal(&#x27;0.20&#x27;)
+total = price + price * rate
+print(f&#x27;{total:.2f}&#x27;)</div></div>
+
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Write your Decimal solution below
+"># Write your Decimal solution below
+</textarea>
+<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
+<div class="nav"><a href="chapter3_13.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_15.html">Next Lesson →</a></div>
+<script>function testLesson(out,code){ return (out.strip()=='79.81' and 'Decimal' in code and '69.40' in code and '0.15' in code, 'The formatted total bill should be 79.81.') }</script>
+</main></body></html>

@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.17 - Average Temperature</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<h1>Chapter 3.17: Average Temperature</h1>
+<div class="box"><h2>What you are learning</h2><p>Given temperatures = [91, 87, 82, 77, 92, 85, 82], import statistics and use one of its functions to determine the average. Assign it to average.</p></div>
+<div class="box hint"><h2>Example</h2><div class="example">import statistics
+values = [1, 2, 3]
+average = statistics.mean(values)
+print(average)</div></div>
+
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="temperatures = [91, 87, 82, 77, 92, 85, 82]
+
+# Import statistics and calculate average below
+
+print(average)">temperatures = [91, 87, 82, 77, 92, 85, 82]
+
+# Import statistics and calculate average below
+
+print(average)</textarea>
+<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
+<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_17.html">Next Lesson →</a></div>
+<script>function testLesson(out,code){ try: return (abs(float(out.strip())-85.14285714285714)<1e-9 and 'statistics' in code and 'mean' in code, 'Use statistics.mean(temperatures).')
+except: return (False,'Use the statistics module to calculate the mean.') }</script>
+</main></body></html>

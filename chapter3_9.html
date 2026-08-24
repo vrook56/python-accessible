@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.9 - Product with Augmented Assignment</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<h1>Chapter 3.9: Product with Augmented Assignment</h1>
+<div class="box"><h2>What you are learning</h2><p>Use a for statement and multiplication augmented assignment to calculate the product of all non-zero values in [0, 5, 2, 3, 0, 1, 4]. Store the result in product.</p></div>
+<div class="box hint"><h2>Example</h2><div class="example">product = 1
+for value in [2, 3, 4]:
+    if value != 0:
+        product *= value</div></div>
+
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="values = [0, 5, 2, 3, 0, 1, 4]
+product = 1
+
+# Write your for loop below
+
+print(product)">values = [0, 5, 2, 3, 0, 1, 4]
+product = 1
+
+# Write your for loop below
+
+print(product)</textarea>
+<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
+<div class="nav"><a href="chapter3_8.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_10.html">Next Lesson →</a></div>
+<script>function testLesson(out,code){ return (out.strip().endswith('120') and '*=' in code and 'for ' in code, 'Use a for loop, skip zeros, and use *=. The product should be 120.') }</script>
+</main></body></html>
