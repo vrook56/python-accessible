@@ -107,8 +107,8 @@ window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
 </script></head><body><main>
 <h1>Chapter 3.13: Range by Elevens</h1>
 <div class="box"><h2>What you are learning</h2><p>Use a for statement with range() to print 11 through 99 in steps of 11 on one line, with two spaces between numbers. Use the end keyword argument.</p></div>
-<div class="box hint"><h2>Example</h2><div class="example">for n in range(5, 26, 5):
-    print(n, end=&#x27;  &#x27;)</div></div>
+<div class="box hint"><h2>Example</h2><div class="example">for n in range(2, 11, 2):
+    print(n, end=&#x27; | &#x27;)</div></div>
 
 <label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Write your for loop below
 "># Write your for loop below
@@ -116,5 +116,5 @@ window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
 <div class="buttons"><button type="button" onclick="runCurrent()">Run Code</button><button type="button" onclick="checkWith(testLesson)">Check My Work</button><button type="button" onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_12.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_14.html">Next Lesson →</a></div>
-<script>function testLesson(out, code) { const ok = out.trim() === '11  22  33  44  55  66  77  88  99' && code.includes('range') && code.includes('end='); return [ok, 'Use range(11, 100, 11) and end= with two spaces.']; }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === '11  22  33  44  55  66  77  88  99' && code.includes('range') && code.includes('end='); return [ok, 'Check the start, stop, and step values in range(), and use end= to keep the values on one line.']; }</script>
 </main></body></html>
