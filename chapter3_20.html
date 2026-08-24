@@ -105,24 +105,21 @@ function enablePythonTabIndentation() {
 window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
 
 </script></head><body><main>
-<h1>Chapter 3.17: Average Temperature</h1>
-<div class="box"><h2>What you are learning</h2><p>Given temperatures = [91, 87, 82, 77, 92, 85, 82], import statistics and use one of its functions to determine the average. Assign it to average.</p></div>
-<div class="box hint"><h2>Example</h2><div class="example">import statistics
-scores = [80, 90, 100]
-center = statistics.mean(scores)
-print(center)</div></div>
+<h1>Chapter 3.20: Programming Project 3: if...else Statements</h1>
+<div class="box"><h2>What you are learning</h2><p>Assume <code>number1</code> and <code>number2</code> already contain integers. Use three if...else statements and equality/relational operators to compare them. Test equality first, then whether number1 is less than number2, then whether number1 is greater than number2.</p></div>
+<div class="box hint"><h2>Hint</h2><div class="example">Think of <code>==</code> and <code>!=</code> as opposite tests. Each if...else statement should print the relationship that is true for the two numbers.</div></div>
 
-<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="temperatures = [91, 87, 82, 77, 92, 85, 82]
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="number1 = 37
+number2 = 42
 
-# Import statistics and calculate average below
+# Write three if...else statements below
+">number1 = 37
+number2 = 42
 
-print(average)">temperatures = [91, 87, 82, 77, 92, 85, 82]
-
-# Import statistics and calculate average below
-
-print(average)</textarea>
+# Write three if...else statements below
+</textarea>
 <div class="buttons"><button type="button" onclick="runCurrent()">Run Code</button><button type="button" onclick="checkWith(testLesson)">Check My Work</button><button type="button" onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
-<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_18.html">Next Lesson →</a></div>
-<script>function testLesson(out, code) { const value = Number(out.trim()); const ok = Number.isFinite(value) && Math.abs(value - 85.14285714285714) < 1e-9 && code.includes('statistics') && code.includes('mean'); return [ok, 'Import statistics, then choose the function that calculates an arithmetic average.']; }</script>
+<div class="nav"><a href="chapter3_19.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_21.html">Next Lesson →</a></div>
+<script>function testLesson(out, code) { const ok=code.includes('==') && code.includes('<') && code.includes('>') && (code.match(/\bif\b/g)||[]).length>=3 && (code.match(/\belse\b/g)||[]).length>=3 && out.includes('37 is not equal to 42') && out.includes('37 is less than 42') && out.includes('37 is less than or equal to 42'); return [ok, 'Use three separate if...else statements and print all true relationships.']; }</script>
 </main></body></html>

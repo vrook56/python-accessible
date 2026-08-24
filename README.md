@@ -4,3 +4,5 @@ This build embeds the CSS and lesson JavaScript directly inside every lesson HTM
 That means the large-print formatting, Run/Check/Reset buttons, and Tab-key indentation do not depend on separate base.css or runtime.js files being uploaded correctly.
 
 Upload/replace all files in the GitHub Pages repository.
+
+Added six Chapter 3 programming projects as lessons 3.18–3.23.

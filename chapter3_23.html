@@ -105,24 +105,15 @@ function enablePythonTabIndentation() {
 window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
 
 </script></head><body><main>
-<h1>Chapter 3.17: Average Temperature</h1>
-<div class="box"><h2>What you are learning</h2><p>Given temperatures = [91, 87, 82, 77, 92, 85, 82], import statistics and use one of its functions to determine the average. Assign it to average.</p></div>
-<div class="box hint"><h2>Example</h2><div class="example">import statistics
-scores = [80, 90, 100]
-center = statistics.mean(scores)
-print(center)</div></div>
+<h1>Chapter 3.23: Programming Project 6: Table of Squares and Cubes</h1>
+<div class="box"><h2>What you are learning</h2><p>Calculate the squares and cubes of the numbers 0 through 5 and print them as a table. Use f-strings. The first column has width 6, the second width 8, and the third width 6. All values should be right-aligned.</p></div>
+<div class="box hint"><h2>Hint</h2><div class="example">Use a loop for the numbers 0 through 5. In an f-string, a field width controls how much space a value occupies.</div></div>
 
-<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="temperatures = [91, 87, 82, 77, 92, 85, 82]
-
-# Import statistics and calculate average below
-
-print(average)">temperatures = [91, 87, 82, 77, 92, 85, 82]
-
-# Import statistics and calculate average below
-
-print(average)</textarea>
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Print the table of squares and cubes below
+"># Print the table of squares and cubes below
+</textarea>
 <div class="buttons"><button type="button" onclick="runCurrent()">Run Code</button><button type="button" onclick="checkWith(testLesson)">Check My Work</button><button type="button" onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
-<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_18.html">Next Lesson →</a></div>
-<script>function testLesson(out, code) { const value = Number(out.trim()); const ok = Number.isFinite(value) && Math.abs(value - 85.14285714285714) < 1e-9 && code.includes('statistics') && code.includes('mean'); return [ok, 'Import statistics, then choose the function that calculates an arithmetic average.']; }</script>
+<div class="nav"><a href="chapter3_22.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="index.html">Finish Chapter →</a></div>
+<script>function testLesson(out, code) { const lines=out.trimEnd().split(/\r?\n/); const expected=['number  square  cube','     0       0     0','     1       1     1','     2       4     8','     3       9    27','     4      16    64','     5      25   125']; const ok=expected.every((x,i)=>lines[i]===x) && /f["']/.test(code) && /for/.test(code); return [ok, 'Use a loop and f-string field widths 6, 8, and 6 to match the table exactly.']; }</script>
 </main></body></html>

@@ -105,24 +105,15 @@ function enablePythonTabIndentation() {
 window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
 
 </script></head><body><main>
-<h1>Chapter 3.17: Average Temperature</h1>
-<div class="box"><h2>What you are learning</h2><p>Given temperatures = [91, 87, 82, 77, 92, 85, 82], import statistics and use one of its functions to determine the average. Assign it to average.</p></div>
-<div class="box hint"><h2>Example</h2><div class="example">import statistics
-scores = [80, 90, 100]
-center = statistics.mean(scores)
-print(center)</div></div>
-
-<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="temperatures = [91, 87, 82, 77, 92, 85, 82]
-
-# Import statistics and calculate average below
-
-print(average)">temperatures = [91, 87, 82, 77, 92, 85, 82]
-
-# Import statistics and calculate average below
-
-print(average)</textarea>
+<h1>Chapter 3.18: Programming Project 1: Validating User Input</h1>
+<div class="box"><h2>What you are learning</h2><p>Modify the examination-results program so that each result must be either 1 or 2. If the user enters any other value, print <strong>Incorrect result entered.</strong> and keep asking until a correct value is entered. Use one counter to track the number of passes, then calculate the number of failures after all results have been received.<br><br>Use <code>input()</code> with no prompt string.</p></div>
+<div class="box hint"><h2>Hint</h2><div class="example">Think about where validation belongs: after reading a value, but before counting it as a pass or failure. A loop can keep asking while the value is not valid.</div></div>
+<div class="box hint"><h2>Test input</h2><p>Enter results separated by spaces. Use 1 for pass and 2 for fail. You can also include an invalid value to test validation.</p><textarea id="inputs" class="editor" style="min-height:120px" spellcheck="false">1 2 1 3 2 1 1 2 1 1 2</textarea></div>
+<label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Write your program below
+"># Write your program below
+</textarea>
 <div class="buttons"><button type="button" onclick="runCurrent()">Run Code</button><button type="button" onclick="checkWith(testLesson)">Check My Work</button><button type="button" onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
-<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_18.html">Next Lesson →</a></div>
-<script>function testLesson(out, code) { const value = Number(out.trim()); const ok = Number.isFinite(value) && Math.abs(value - 85.14285714285714) < 1e-9 && code.includes('statistics') && code.includes('mean'); return [ok, 'Import statistics, then choose the function that calculates an arithmetic average.']; }</script>
+<div class="nav"><a href="chapter3_17.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_19.html">Next Lesson →</a></div>
+<script>function testLesson(out, code) { const ok = code.includes('input()') && !/input\s*\(\s*["']/.test(code) && /while|for/.test(code) && out.includes('Incorrect result entered.') && /pass/i.test(out) && /fail/i.test(out); return [ok, 'Use input() with no prompt, reject values other than 1 or 2, count passes, and calculate failures.']; }</script>
 </main></body></html>
