@@ -1,4 +1,110 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.13 - Range by Elevens</title><link rel="stylesheet" href="base.css"><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script src="runtime.js"></script></head><body><main>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chapter 3.13 - Range by Elevens</title><style>
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#000;margin:0;padding:0;font-size:26px;line-height:1.5}main{max-width:1100px;margin:auto;padding:28px}h1{font-size:2.1em;margin:.2em 0}h2{font-size:1.5em;margin-top:1.2em}.box{border:4px solid #000;padding:20px;margin:24px 0;border-radius:10px}.hint{font-size:.95em;background:#f5f5f5}.example{font-family:Consolas,monospace;white-space:pre-wrap;font-size:1em}.editor{width:100%;min-height:320px;font-family:Consolas,monospace;font-size:30px;line-height:1.45;padding:16px;border:4px solid #000;box-sizing:border-box}.buttons{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}.buttons button,.nav a{font-size:28px;padding:16px 24px;border:3px solid #000;background:#fff;color:#000;text-decoration:none;border-radius:8px;cursor:pointer}.output{min-height:150px;font-family:Consolas,monospace;font-size:30px;white-space:pre-wrap}.success{font-size:34px;font-weight:bold}.nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:28px}@media(max-width:700px){body{font-size:22px}.editor,.output{font-size:24px}.buttons button,.nav a{font-size:24px}}
+
+</style><script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script><script>
+let pyodideReadyPromise = null;
+
+async function getPyodide() {
+  if (window.pyodide) return window.pyodide;
+  if (!pyodideReadyPromise) {
+    pyodideReadyPromise = loadPyodide().then(instance => {
+      window.pyodide = instance;
+      return instance;
+    });
+  }
+  return pyodideReadyPromise;
+}
+
+async function runPython(code, inputValues = []) {
+  const output = document.getElementById('output');
+  try {
+    if (!window.pyodide) output.textContent = 'Loading Python...';
+    const pyodide = await getPyodide();
+
+    pyodide.globals.set('__user_inputs__', inputValues);
+    const indentedCode = code.split('\n').map(line => '    ' + line).join('\n');
+    const wrapper = `import builtins, sys, io\n__out = io.StringIO()\n__oldout = sys.stdout\nsys.stdout = __out\n__inputs = list(__user_inputs__)\ndef __fake_input(prompt=''):\n    if prompt:\n        print(prompt, end='')\n    return str(__inputs.pop(0)) if __inputs else ''\n__oldinput = builtins.input\nbuiltins.input = __fake_input\ntry:\n${indentedCode}\nfinally:\n    builtins.input = __oldinput\n    sys.stdout = __oldout\n__out.getvalue()`;
+
+    return await pyodide.runPythonAsync(wrapper);
+  } catch (error) {
+    return String(error);
+  }
+}
+
+function getInputs() {
+  const inputBox = document.getElementById('inputs');
+  if (!inputBox) return [];
+  return inputBox.value.trim().split(/\s+/).filter(Boolean);
+}
+
+async function runCurrent() {
+  const output = document.getElementById('output');
+  const feedback = document.getElementById('feedback');
+  feedback.textContent = '';
+  output.textContent = 'Running...';
+  output.textContent = await runPython(document.getElementById('code').value, getInputs());
+}
+
+function resetCode() {
+  const editor = document.getElementById('code');
+  editor.value = editor.dataset.starter || '';
+  document.getElementById('output').textContent = '';
+  document.getElementById('feedback').textContent = '';
+  editor.focus();
+}
+
+async function checkWith(testFn) {
+  const outputEl = document.getElementById('output');
+  const feedbackEl = document.getElementById('feedback');
+  feedbackEl.textContent = '';
+  outputEl.textContent = 'Checking...';
+
+  const code = document.getElementById('code').value;
+  const out = await runPython(code, getInputs());
+  outputEl.textContent = out;
+
+  let ok = false;
+  let msg = 'Keep working.';
+  try {
+    [ok, msg] = testFn(out, code);
+  } catch (error) {
+    console.error('Lesson checker error:', error);
+    msg = 'The checker had a problem. Try Run Code and review the output.';
+  }
+  feedbackEl.textContent = ok ? '🎉 Correct! Great job! 🎉' : (msg || 'Keep working.');
+}
+
+function enablePythonTabIndentation() {
+  const editor = document.getElementById('code');
+  if (!editor) return;
+
+  editor.addEventListener('keydown', function (event) {
+    if (event.key !== 'Tab') return;
+    event.preventDefault();
+
+    const start = this.selectionStart;
+    const end = this.selectionEnd;
+    const indent = '    ';
+
+    if (start === end) {
+      this.setRangeText(indent, start, end, 'end');
+      return;
+    }
+
+    const value = this.value;
+    const lineStart = value.lastIndexOf('\n', start - 1) + 1;
+    const selectedEnd = end > start && value[end - 1] === '\n' ? end - 1 : end;
+    const lineEndIndex = value.indexOf('\n', selectedEnd);
+    const lineEnd = lineEndIndex === -1 ? value.length : lineEndIndex;
+    const block = value.slice(lineStart, lineEnd);
+    const indented = block.split('\n').map(line => indent + line).join('\n');
+    this.setRangeText(indented, lineStart, lineEnd, 'select');
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enablePythonTabIndentation);
+
+</script></head><body><main>
 <h1>Chapter 3.13: Range by Elevens</h1>
 <div class="box"><h2>What you are learning</h2><p>Use a for statement with range() to print 11 through 99 in steps of 11 on one line, with two spaces between numbers. Use the end keyword argument.</p></div>
 <div class="box hint"><h2>Example</h2><div class="example">for n in range(5, 26, 5):
@@ -7,7 +113,7 @@
 <label for="code"><h2>Your Python code</h2></label><textarea id="code" class="editor" spellcheck="false" data-starter="# Write your for loop below
 "># Write your for loop below
 </textarea>
-<div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
+<div class="buttons"><button type="button" onclick="runCurrent()">Run Code</button><button type="button" onclick="checkWith(testLesson)">Check My Work</button><button type="button" onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_12.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_14.html">Next Lesson →</a></div>
 <script>function testLesson(out, code) { const ok = out.trim() === '11  22  33  44  55  66  77  88  99' && code.includes('range') && code.includes('end='); return [ok, 'Use range(11, 100, 11) and end= with two spaces.']; }</script>
