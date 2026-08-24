@@ -17,5 +17,5 @@ number2 = 114
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_9.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_11.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip()=='The larger of 72 and 114 is 114' and 'f' in code and ' if ' in code and ' else ' in code, 'Use one f-string print statement with a conditional expression.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === 'The larger of 72 and 114 is 114' && code.includes('f') && code.includes(' if ') && code.includes(' else '); return [ok, 'Use one f-string print statement with a conditional expression.']; }</script>
 </main></body></html>

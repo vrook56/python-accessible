@@ -20,5 +20,5 @@ weather = &#x27;&#x27;
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_5.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_7.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return ('if' in code and 'else' in code and '<=' in code and '32' in code and 'weather' in code and 'Snow' in code and 'Rain' in code, 'Use if/else and assign Snow or Rain to weather.') }</script>
+<script>function testLesson(out, code) { const ok = code.includes('if') && code.includes('else') && code.includes('<=') && code.includes('32') && code.includes('weather') && code.includes('Snow') && code.includes('Rain'); return [ok, 'Use if/else and assign Snow or Rain to weather.']; }</script>
 </main></body></html>

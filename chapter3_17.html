@@ -17,7 +17,6 @@ print(average)">temperatures = [91, 87, 82, 77, 92, 85, 82]
 print(average)</textarea>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
-<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_17.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ try: return (abs(float(out.strip())-85.14285714285714)<1e-9 and 'statistics' in code and 'mean' in code, 'Use statistics.mean(temperatures).')
-except: return (False,'Use the statistics module to calculate the mean.') }</script>
+<div class="nav"><a href="chapter3_16.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="index.html">Finish Chapter →</a></div>
+<script>function testLesson(out, code) { const value = Number(out.trim()); const ok = Number.isFinite(value) && Math.abs(value - 85.14285714285714) < 1e-9 && code.includes('statistics') && code.includes('mean'); return [ok, 'Use statistics.mean(temperatures).']; }</script>
 </main></body></html>

@@ -18,5 +18,5 @@ while number &lt; 5:
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_14.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_16.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip()=='0 1 2 3 4 6 7 8 9' and 'while' in code and 'continue' in code, 'Print 0 through 9, skip 5, and make sure the loop still advances.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === '0 1 2 3 4 6 7 8 9' && code.includes('while') && code.includes('continue'); return [ok, 'Print 0 through 9, skip 5, and make sure the loop still advances.']; }</script>
 </main></body></html>

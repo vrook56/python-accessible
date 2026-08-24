@@ -24,6 +24,5 @@ print(average)</textarea>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_10.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_12.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ try: return (abs(float(out.strip().splitlines()[-1])-80)<1e-9 and 'while' in code and '-1' in code and 'input()' in code, 'With inputs 90 80 70 -1, the average should be 80.')
-except: return (False,'Calculate average after the sentinel loop.') }</script>
+<script>function testLesson(out, code) { const lines = out.trim().split(/\r?\n/); const value = Number(lines[lines.length - 1]); const ok = Number.isFinite(value) && Math.abs(value - 80) < 1e-9 && code.includes('while') && code.includes('-1') && code.includes('input()'); return [ok, 'With inputs 90 80 70 -1, the average should be 80.']; }</script>
 </main></body></html>

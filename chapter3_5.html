@@ -18,5 +18,5 @@ letter_grade = &#x27;&#x27;
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_5.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_6.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return ('if' in code and 'grade' in code and 'letter_grade' in code and ">=" in code and "'A'" in code or '"A"' in code, 'Check the condition and assign A to letter_grade.') }</script>
+<script>function testLesson(out, code) { const ok = code.includes('if') && code.includes('grade') && code.includes('letter_grade') && code.includes('>=') && (code.includes("'A'") || code.includes('"A"')); return [ok, 'Check the condition and assign A to letter_grade.']; }</script>
 </main></body></html>

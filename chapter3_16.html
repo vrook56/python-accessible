@@ -19,5 +19,5 @@ print(result)</textarea>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_15.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_17.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip()=='True' and 'and' in code and '<=' in code and 'Male' in code and 'result' in code, 'Combine both tests with and and assign the boolean result.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === 'True' && code.includes('and') && code.includes('<=') && code.includes('Male') && code.includes('result'); return [ok, 'Combine both tests with and and assign the boolean result.']; }</script>
 </main></body></html>

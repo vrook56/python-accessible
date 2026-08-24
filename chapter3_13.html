@@ -10,5 +10,5 @@
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_12.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_14.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip()=='11  22  33  44  55  66  77  88  99' and 'range' in code and 'end=' in code, 'Use range(11, 100, 11) and end= with two spaces.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === '11  22  33  44  55  66  77  88  99' && code.includes('range') && code.includes('end='); return [ok, 'Use range(11, 100, 11) and end= with two spaces.']; }</script>
 </main></body></html>

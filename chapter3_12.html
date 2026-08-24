@@ -14,5 +14,5 @@
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_11.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_13.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ exp='9 is a multiple of 3\n7 is not a multiple of 3\n24 is a multiple of 3'; return (out.strip()==exp, 'Use % 3 and produce one line for each of the three inputs.') }</script>
+<script>function testLesson(out, code) { const exp = '9 is a multiple of 3\n7 is not a multiple of 3\n24 is a multiple of 3'; return [out.trim() === exp, 'Use % 3 and produce one line for each of the three inputs.']; }</script>
 </main></body></html>

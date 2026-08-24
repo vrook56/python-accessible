@@ -13,5 +13,5 @@ print(f&#x27;{total:.2f}&#x27;)</div></div>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_13.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_15.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip()=='79.81' and 'Decimal' in code and '69.40' in code and '0.15' in code, 'The formatted total bill should be 79.81.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim() === '79.81' && code.includes('Decimal') && code.includes('69.40') && code.includes('0.15'); return [ok, 'The formatted total bill should be 79.81.']; }</script>
 </main></body></html>

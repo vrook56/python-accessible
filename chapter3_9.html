@@ -20,5 +20,5 @@ print(product)</textarea>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_8.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_10.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ return (out.strip().endswith('120') and '*=' in code and 'for ' in code, 'Use a for loop, skip zeros, and use *=. The product should be 120.') }</script>
+<script>function testLesson(out, code) { const ok = out.trim().endsWith('120') && code.includes('*=') && code.includes('for '); return [ok, 'Use a for loop, skip zeros, and use *=. The product should be 120.']; }</script>
 </main></body></html>

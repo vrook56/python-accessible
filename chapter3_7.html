@@ -22,5 +22,5 @@ print(number, square)</textarea>
 <div class="buttons"><button onclick="runCurrent()">Run Code</button><button onclick="checkWith(testLesson)">Check My Work</button><button onclick="resetCode()">Reset</button></div>
 <h2>Output</h2><div id="output" class="box output" aria-live="polite"></div><div id="feedback" class="success" aria-live="assertive"></div>
 <div class="nav"><a href="chapter3_6.html">← Previous Lesson</a><a href="index.html">HOME</a><a href="chapter3_8.html">Next Lesson →</a></div>
-<script>function testLesson(out,code){ vals=out.strip().split(); return (len(vals)>=2 and vals[-2:] == ['32','1024'], 'The loop should finish with number = 32 and square = 1024.') }</script>
+<script>function testLesson(out, code) { const vals = out.trim().split(/\s+/); const ok = vals.length >= 2 && vals[vals.length - 2] === '32' && vals[vals.length - 1] === '1024'; return [ok, 'The loop should finish with number = 32 and square = 1024.']; }</script>
 </main></body></html>
