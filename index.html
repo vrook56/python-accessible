@@ -17,171 +17,152 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
     color: #111111;
-
     margin: 0 auto;
     padding: 32px;
-
     max-width: 950px;
 }
 
 h1 {
-    font-size: 50px;
-    margin-bottom: 12px;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.intro {
+.subtitle {
     font-size: 28px;
-    line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
-
-/* GOOGLE LOGIN BUTTON */
-
-.google {
-    display: block;
-
-    width: 100%;
-
-    margin: 30px 0 45px 0;
-    padding: 30px;
-
-    font-size: 34px;
-    font-weight: bold;
-
-    text-align: center;
-    text-decoration: none;
-
-    color: #ffffff;
-    background: #111111;
-
-    border: 6px solid #111111;
-    border-radius: 14px;
+h2 {
+    font-size: 38px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #111111;
+    padding-bottom: 10px;
 }
-
-
-/* LESSON BUTTONS */
 
 .lesson {
     display: block;
-
     width: 100%;
+    padding: 22px;
+    margin: 15px 0;
 
-    margin: 24px 0;
-    padding: 30px;
-
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
 
-    text-align: left;
-    text-decoration: none;
-
-    color: #111111;
     background: #ffffff;
+    color: #111111;
 
-    border: 5px solid #111111;
-    border-radius: 14px;
+    border: 4px solid #111111;
+    border-radius: 8px;
+
+    text-decoration: none;
 }
-
-
-/* KEYBOARD AND MOUSE FOCUS */
 
 .lesson:hover,
-.lesson:focus,
-.google:hover,
-.google:focus {
-
-    outline: 9px solid #2563eb;
-    outline-offset: 5px;
+.lesson:focus {
+    background: #111111;
+    color: #ffffff;
+    outline: 6px solid #555555;
 }
 
-
-/* INSTRUCTIONS */
-
-.instructions {
+.note {
     font-size: 24px;
-    line-height: 1.6;
-
     margin-top: 45px;
-
-    border-top: 4px solid #111111;
-    padding-top: 25px;
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-<h1>🐍 Python Lessons</h1>
+<h1>Python Programming</h1>
 
-<p class="intro">
-Welcome. First, make sure you are signed in to Google.
-Then select today's Python lesson.
+<p class="subtitle">
+Accessible Python Lessons
 </p>
 
 
-<a
-    class="google"
-    href="https://accounts.google.com/"
-    target="_blank"
-    aria-label="Sign in to Google">
-    🔐 SIGN IN TO GOOGLE
+<h2>Chapter 2</h2>
+
+<a class="lesson" href="Lesson_2_2.ipynb">
+Lesson 2.2
+</a>
+
+<a class="lesson" href="Lesson_2_3.ipynb">
+Lesson 2.3
+</a>
+
+<a class="lesson" href="Lesson_2_4.ipynb">
+Lesson 2.4
+</a>
+
+<a class="lesson" href="Lesson_2_5.ipynb">
+Lesson 2.5
+</a>
+
+<a class="lesson" href="Lesson_2_6.ipynb">
+Lesson 2.6
 </a>
 
 
-<a
-    class="lesson"
-    href="https://colab.research.google.com/github/vrook56/python-accessible/blob/main/Lesson_2_2.ipynb"
-    target="_blank">
-    Lesson 2.2 — Variables and Addition
+<h2>Chapter 3 — Control Statements</h2>
+
+<a class="lesson" href="chapter3_5.html">
+Lesson 3.5 — if Statement
+</a>
+
+<a class="lesson" href="chapter3_6.html">
+Lesson 3.6 — if / else
+</a>
+
+<a class="lesson" href="chapter3_7.html">
+Lesson 3.7 — while Loop
+</a>
+
+<a class="lesson" href="chapter3_8.html">
+Lesson 3.8 — for Loop
+</a>
+
+<a class="lesson" href="chapter3_9.html">
+Lesson 3.9 — Augmented Assignment
+</a>
+
+<a class="lesson" href="chapter3_10.html">
+Lesson 3.10 — Conditional Expression
+</a>
+
+<a class="lesson" href="chapter3_11.html">
+Lesson 3.11 — Sentinel-Controlled Loop
+</a>
+
+<a class="lesson" href="chapter3_12.html">
+Lesson 3.12 — Multiples of Three
+</a>
+
+<a class="lesson" href="chapter3_13.html">
+Lesson 3.13 — range()
+</a>
+
+<a class="lesson" href="chapter3_14.html">
+Lesson 3.14 — Decimal
+</a>
+
+<a class="lesson" href="chapter3_15.html">
+Lesson 3.15 — while and continue
+</a>
+
+<a class="lesson" href="chapter3_16.html">
+Lesson 3.16 — Logical Operators
+</a>
+
+<a class="lesson" href="chapter3_17.html">
+Lesson 3.17 — Statistics
 </a>
 
 
-<a
-    class="lesson"
-    href="https://colab.research.google.com/github/vrook56/python-accessible/blob/main/Lesson_2_3.ipynb"
-    target="_blank">
-    Lesson 2.3 — Powers and Square Roots
-</a>
-
-
-<a
-    class="lesson"
-    href="https://colab.research.google.com/github/vrook56/python-accessible/blob/main/Lesson_2_4.ipynb"
-    target="_blank">
-    Lesson 2.4 — Newline Characters
-</a>
-
-
-<a
-    class="lesson"
-    href="https://colab.research.google.com/github/vrook56/python-accessible/blob/main/Lesson_2_5.ipynb"
-    target="_blank">
-    Lesson 2.5 — Quotes Inside Strings
-</a>
-
-
-<a
-    class="lesson"
-    href="https://colab.research.google.com/github/vrook56/python-accessible/blob/main/Lesson_2_6.ipynb"
-    target="_blank">
-    Lesson 2.6 — Converting to an Integer
-</a>
-
-
-<div class="instructions">
-
-<strong>Keyboard:</strong><br>
-
-Press <strong>Tab</strong> to move between buttons.<br>
-Press <strong>Enter</strong> to open a button.<br>
-Press <strong>F11</strong> for more screen space.
-
-</div>
-
+<p class="note">
+Select a lesson to begin.
+</p>
 
 </body>
 </html>
